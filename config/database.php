@@ -72,7 +72,7 @@ return [
             'username' => 'iaomdxsnxfqjar',//env('DB_USERNAME', 'forge'),
             'password' => '43b8a5b0ab57f5bfddc65d8cfeeae04151a7b8d2a5e44a4d55e7526723e5cc3a',//env('DB_PASSWORD', ''),
             'charset' => 'utf8mb4',
-            "client_encoding": "utf8mb4",
+            "client_encoding"=> "utf8mb4",
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
