@@ -71,7 +71,7 @@ return [
             'database' => 'd1hp5l5ruj4u64',//env('DB_DATABASE', 'forge'),
             'username' => 'iaomdxsnxfqjar',//env('DB_USERNAME', 'forge'),
             'password' => '43b8a5b0ab57f5bfddc65d8cfeeae04151a7b8d2a5e44a4d55e7526723e5cc3a',//env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
+            'charset' => 'utf8mb4',
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
