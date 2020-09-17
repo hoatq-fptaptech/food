@@ -33,7 +33,7 @@ class ApiController extends Controller
     }
 
     public function category($id){
-        $category = Category::find($id);dd($category);
+        $category = Category::findOrFail($id);
         return response()->json([
             "message"=>"success",
             "data"=>[
@@ -43,7 +43,8 @@ class ApiController extends Controller
         ]);
     }
 
-    public function food(Food $food){
+    public function food($id){
+        $food = Food::findOrFail($id);
         return response()->json([
             "message"=>"success",
             "data"=>$food->toArray()
