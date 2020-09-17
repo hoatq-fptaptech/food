@@ -35,7 +35,10 @@ class ApiController extends Controller
     public function category(Category $category){
         return response()->json([
             "message"=>"success",
-            "data"=>$category->toArray()
+            "data"=>[
+                "category"=>$category->toArray(),
+                "foods"=>$category->foods
+            ]
         ]);
     }
 
