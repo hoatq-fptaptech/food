@@ -20,11 +20,11 @@ class ApiController extends Controller
     }
 
     public function today(){
-       // if(!Cache::has("today_special")){
+        if(!Cache::has("today_special")){
             $data = Food::inRandomOrder()->limit(6)->get()->toArray();
             $now = Carbon::now()->addHour();
             Cache::put("today_special",$data,$now);
-      //  }
+        }
         $data = Cache::get("today_special");
          return response()->json([
                 "message"=>"success",
