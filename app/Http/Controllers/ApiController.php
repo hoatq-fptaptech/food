@@ -3,39 +3,44 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApiController extends Controller
 {
     public function menu(){
+        $data = [
+            [
+                //"id"=>1,
+                "icon"=>"https://www.lotteria.vn/media/catalog/tmp/category/cate-9_1.jpg",
+                "name"=>"Burger"
+            ],
+            [
+               // "id"=>2,
+                "icon"=>"https://www.lotteria.vn/media/catalog/tmp/category/cate-2.jpg",
+                "name"=>"Chicken"
+            ],
+            [
+               // "id"=>3,
+                "icon"=>"https://www.lotteria.vn/media/catalog/tmp/category/cate-7.jpg",
+                "name"=>"Rice"
+            ],
+            [
+                //"id"=>4,
+                "icon"=>"https://www.lotteria.vn/media/catalog/tmp/category/cate-6.jpg",
+                "name"=>"Drinks"
+            ],
+            [
+               // "id"=>5,
+                "icon"=>"https://www.lotteria.vn/media/catalog/tmp/category/cate-8.jpg",
+                "name"=>"Dessert"
+            ],
+        ];
+        foreach ($data as $item)
+            DB::table("category")->insert($item);
+        die("done");
         return response()->json([
             "message"=>"success",
-            "data"=>[
-                [
-                    "id"=>1,
-                    "icon"=>"https://www.lotteria.vn/media/catalog/tmp/category/cate-9_1.jpg",
-                    "name"=>"Burger"
-                ],
-                [
-                    "id"=>2,
-                    "icon"=>"https://www.lotteria.vn/media/catalog/tmp/category/cate-2.jpg",
-                    "name"=>"Chicken"
-                ],
-                [
-                    "id"=>3,
-                    "icon"=>"https://www.lotteria.vn/media/catalog/tmp/category/cate-7.jpg",
-                    "name"=>"Rice"
-                ],
-                [
-                    "id"=>4,
-                    "icon"=>"https://www.lotteria.vn/media/catalog/tmp/category/cate-6.jpg",
-                    "name"=>"Drinks"
-                ],
-                [
-                    "id"=>5,
-                    "icon"=>"https://www.lotteria.vn/media/catalog/tmp/category/cate-8.jpg",
-                    "name"=>"Dessert"
-                ],
-            ]
+            "data"=> $data
         ]);
     }
 
