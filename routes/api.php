@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get("/menu","ApiController@menu");
 Route::get("/today-special","ApiController@today");
+Route::get("/category/{Category}","ApiController@category");
+Route::get("/food/{Food}","ApiController@food");
