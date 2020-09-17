@@ -32,7 +32,8 @@ class ApiController extends Controller
         ]);
     }
 
-    public function category(Category $category){
+    public function category($id){
+        $category = Category::find($id);dd($category);
         return response()->json([
             "message"=>"success",
             "data"=>[
