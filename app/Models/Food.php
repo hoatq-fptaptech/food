@@ -15,6 +15,7 @@ class Food extends Model
     public function toArray()
     {
         return [
+            'id'=>$this->__get("id"),
             'name'=>$this->__get("name"),
             'image'=>$this->__get("image"),
             'description'=>$this->__get("description"),
