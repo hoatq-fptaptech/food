@@ -12,6 +12,6 @@ class Category extends Model
     protected $fillable = ["name",'icon'];
 
     public function foods(){
-        return $this->hasMany(Food::class);
+        return $this->hasMany(Food::class,"category_id");
     }
 }
