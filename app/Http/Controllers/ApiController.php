@@ -65,8 +65,6 @@ class ApiController extends Controller
 
     public function orderDetail($id){
         $orders = [];
-        return response()->json(["message"=>"cart","data"=>Cache::get("orders")]);
-//        return Cache::get("orders")
         if(Cache::has("orders"))
             $orders = Cache::get("orders");
         if(isset($orders["id"])){
