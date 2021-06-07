@@ -21,3 +21,5 @@ Route::get("/menu","ApiController@menu");
 Route::get("/today-special","ApiController@today");
 Route::get("/category/{id}","ApiController@category");
 Route::get("/food/{id}","ApiController@food");
+Route::get("/order/{id}","ApiController@orderDetail");
+Route::post("/create-order","ApiController@addOrder");

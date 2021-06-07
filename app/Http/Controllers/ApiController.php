@@ -50,4 +50,26 @@ class ApiController extends Controller
             "data"=>$food->toArray()
         ]);
     }
+
+    public function addOrder(Request $request){
+        $orderId = time();
+        $data = $request->all();
+        $data["id"]=$orderId;
+        $orders = [];
+        if(Cache::has("orders"))
+            $orders = Cache::get("orders");
+        $orders[$orderId] = $data;
+        Cache::forever("orders",$orders);
+        return response()->json(["message"=>"success","data"=>["order_id"=>$orderId]]);
+    }
+
+    public function orderDetail($id){
+        $orders = [];
+        if(Cache::has("orders"))
+            $orders = Cache::get("orders");
+        if(isset($orders["id"])){
+            return response()->json(["message"=>"success","data"=>$orders[$id]]);
+        }
+        return response()->json(["message"=>"fail","data"=>null]);
+    }
 }
